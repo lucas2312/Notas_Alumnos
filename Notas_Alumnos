@@ -1,0 +1,49 @@
+import java.util.List;
+
+class Notas_Alumnos {
+    private final List<Float> notas;
+
+    public Notas_Alumnos(List<Float> notas) {
+        this.notas = notas;
+    }
+
+    public float calcularMayorNota() {
+        float mayorNota = notas.get(0);
+        for (float nota : notas) {
+            if (nota > mayorNota) {
+                mayorNota = nota;
+            }
+        }
+        return mayorNota;
+    }
+
+    public float calcularPorcentajeAprobados() {
+        int aprobados = 0;
+        for (float nota : notas) {
+            if (nota > 3.0) {
+                aprobados++;
+            }
+        }
+        return (aprobados * 100.0f) / notas.size();
+    }
+
+    public float calcularPromedio() {
+        float suma = 0.0f;
+        for (float nota : notas) {
+            suma += nota;
+        }
+        return suma / notas.size();
+    }
+
+    public int encontrarPosicionMenorNota() {
+        float menorNota = notas.get(0);
+        int posicion = 0;
+        for (int i = 1; i < notas.size(); i++) {
+            if (notas.get(i) < menorNota) {
+                menorNota = notas.get(i);
+                posicion = i;
+            }
+        }
+        return posicion;
+    }
+}
