@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Definir las notas de los 15 alumnos
+    
         List<Float> notas = new ArrayList<>();
         notas.add(2.5f);
         notas.add(3.2f);
@@ -22,16 +22,14 @@ public class Main {
         notas.add(2.7f);
         notas.add(4.9f);
 
-        // Crear una instancia de NotasAlumnos
         Notas_Alumnos notasAlumnos = new Notas_Alumnos(notas);
 
-        // Realizar los cálculos
+
         float mayorNota = notasAlumnos.calcularMayorNota();
         float porcentajeAprobados = notasAlumnos.calcularPorcentajeAprobados();
         float promedio = notasAlumnos.calcularPromedio();
         int posicionMenorNota = notasAlumnos.encontrarPosicionMenorNota();
 
-        // Mostrar los resultados
         System.out.println("La mayor nota es: " + mayorNota);
         System.out.println("El porcentaje de aprobados es: " + porcentajeAprobados + "%");
         System.out.println("El promedio de las notas es: " + promedio);
